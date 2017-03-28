@@ -1,0 +1,13 @@
+{% extends "layout.jinja2" %}
+
+{% block content %}
+<div class="content posts">
+  <div class="col-lg-10 col-lg-offset-2 post_title">
+    <h1><span class="font-semi-bold">{{ post.title }}</span></h1>
+    <hr class="star-light"></hr>
+  </div>
+  <div class="col-lg-10 col-lg-offset-2">
+    <span>Posted: {{ post.date }}</span>
+    <p> {{post.body|rst}} </p>
+  </div>
+{% endblock content %}
