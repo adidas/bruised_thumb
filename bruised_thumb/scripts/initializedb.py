@@ -1,6 +1,7 @@
 import os
 import sys
 import transaction
+import datetime
 
 from pyramid.paster import (
     get_appsettings,
@@ -15,7 +16,7 @@ from ..models import (
     get_session_factory,
     get_tm_session,
     )
-# from ..models import MyModel
+from ..models import Post
 
 
 def usage(argv):
@@ -41,5 +42,11 @@ def main(argv=sys.argv):
     with transaction.manager:
         dbsession = get_tm_session(session_factory, transaction.manager)
 
-        # model = MyModel(name='one', value=1)
-        # dbsession.add(model)
+        post = Post(date=datetime.date.today(), title='It Works!', body=(
+            '''If you see this then your install went correctly, congratulations\n'''
+            '''\n'''
+            '''What's next?\n'''
+            '''============\n'''
+            '''\n'''
+            '''That is up to you.'''))
+        dbsession.add(post)

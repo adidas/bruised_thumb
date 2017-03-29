@@ -1,4 +1,4 @@
-simple_pyr_sql
+bruised_thumb
 ===============================
 
 Getting Started
