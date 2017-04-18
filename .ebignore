@@ -1,6 +1,5 @@
 *.egg-info
 env/
-docs.db
 __pycache__/
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
